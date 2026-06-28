@@ -1,0 +1,525 @@
+# Changelog
+
+## [0.12.0](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.11.0...v0.12.0) (2026-06-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* **cli:** rename the CLI command from `calfkit` to `ck` ([#273](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/273))
+* migrate MCP capability plane onto the control-plane substrate ([#260](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/260))
+
+### Features
+
+* agent discovery + addressing substrate [agent-mesh PR-A] ([#279](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/279)) ([d48d3a6](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/d48d3a6efce547ae12dc4ca193be2727a9977b37))
+* agent-to-agent handoff [agent-mesh PR-C] ([#282](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/282)) ([9652dc5](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/9652dc5c65b2018c74177cc2486b87e55e38faf9))
+* agent-to-agent peer messaging [agent-mesh PR-B] ([#281](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/281)) ([689f589](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/689f58926445d940feaf88173ff095a9001428b3))
+* **cli:** rename the CLI command from `calfkit` to `ck` ([#273](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/273)) ([3ffcc4f](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/3ffcc4f6817eef8f1e54ee8a3ee7e3f4f7a17ce5))
+* discover mode — `discover=True` on `Tools`  for open-ended tool-node discovery ([#270](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/270)) ([60fdf5f](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/60fdf5fb74915c35dc7643132a4e1777b8a64e1f))
+* HandoffRequest field descriptions + sharper agent-messaging copy ([#284](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/284)) ([efcee1e](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/efcee1ea05e0db2ce0d1c39325c0bf3433abf59c))
+* make Agent subscribe_topics ctor argument optional ([#290](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/290)) ([6a5736b](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/6a5736bcfe6051af57c24c5500e1817ba011e2dd))
+* migrate MCP capability plane onto the control-plane substrate ([#260](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/260)) ([2695878](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/2695878bf24ef9b78f6cc92584802e5499831a9b))
+* namespace MCP tool names by their toolbox node  ([#269](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/269)) ([7c72232](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/7c72232cedd98e90d1d921d85f0ad369a07c1cfd))
+* redesign the caller surface: agent gateway + send/start/execute + firehose ([#289](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/289)) ([24229bb](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/24229bb9c951c4a8fa08652c536351aebb13cc96))
+* runtime tool discoverability ([#266](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/266)) ([930286a](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/930286a98f33270f7545f46b297d0cb1841c8106))
+
+
+### Bug Fixes
+
+* agent-POV projection attributes a single other-agent's history ([#268](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/268)) ([ac62921](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/ac629213b6a3f99be217f566e7419ea906fedfae))
+* decode floor catches `JSONDecodeError` and `UnicodeDecodeError`, not just `ValidationError` ([#285](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/285)) ([4f8953f](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/4f8953fecfcdd35227ae81a976af8fa8f5192a1b))
+* **deps:** cap pydantic-graph below 2.0.0 ([#280](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/280)) ([eba69df](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/eba69dfb5a9f6622e61c98240c82219175f009e8))
+* **projection:** surface final_result-prefixed union/multi-output structured outputs ([#276](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/276)) ([9f37247](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/9f37247521f7cfaab620d93d12af4bf6d4e4fa8c))
+
+
+### Documentation
+
+* agent-to-agent peers, messaging & handoff — how-to, tutorial, reference + live test ([#283](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/283)) ([af99c02](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/af99c0249de33f914414e3d486502bb975df4cd8))
+* cover policy seams & faults; drop docs for the removed APIs ([#259](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/259)) ([5b12dac](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/5b12dac929961112745a0dd7f3a6c547bed7d6e5))
+* MCP: strict Diátaxis cleanup + reference + runnable example ([#265](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/265)) ([78dfef9](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/78dfef947300cd0eb181b913d37bdb6ca61859a4))
+* README rewrite ([#287](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/287)) ([e0daa31](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/e0daa3103fb82be2420e38b6c0cb86c85a5fd240))
+* relocate internal-implementation docs to docs/dev ([#261](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/261)) ([89d9850](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/89d9850e0c2803f3566ca5cbf578eba5a1277bdd))
+
+## [0.11.0](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.10.0...v0.11.0) (2026-06-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename toolbox_id/server_name to name on the MCP toolbox types ([#255](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/255))
+* the fault rail: typed fault propagation, policy seams & in-node fan-out fold ([#247](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/247))
+
+### Features
+
+* control-plane substrate: generic node discoverability machinery ([#256](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/256)) ([37438b7](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/37438b740110fc58fb1fff04e81d331b52b66242))
+* durable in-node fan-out, return-only — staged pipeline + ktables store ([#233](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/233)) ([a05f7bc](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/a05f7bc9076ac26fc0f2b53b0c02983e5a5ad6dc))
+* fault wire model: ErrorReport, FaultMessage, NodeFaultError ([#229](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/229)) ([4dba194](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/4dba194d489cfeab758b14fc71ed3e9fe1a7c050))
+* per-delivery reply slot for returns; Envelope.reply + x-calf-kind ([#223](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/223)) ([4d80a5e](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/4d80a5eb53b8e38df2071b445024c8e6a248ca34))
+* phase-0 prereqs for in-node fan-out aggregation ([#228](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/228)) ([58f19a1](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/58f19a16b1a93d962b778a56d7e2db6a72e61104))
+* the fault rail: typed fault propagation, policy seams & in-node fan-out fold ([#247](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/247)) ([04203fc](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/04203fceb292971e7d3cf774987c8e7d1e91f9c2))
+
+
+### Bug Fixes
+
+* abort the durable fan-out batch on an OPEN-path failure ([#234](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/234)) ([e66cc74](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/e66cc74861e5d0694f30b67b7258dfc58ec3dc2a))
+
+
+### Documentation
+
+* accept ADR-0006: reply rides a per-delivery envelope slot ([#235](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/235)) ([a5107a6](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/a5107a697afe094fa29efaad07b8601fd280022e))
+* add concurrency model doc ([#252](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/252)) ([59b3d90](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/59b3d901b45f82fde2da72a93a40e959aa770998))
+* clarify the test-taxonomy table's run column in CONTRIBUTING ([#244](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/244)) ([c2eb989](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/c2eb989e7739008f1947df539894e26bd39e16d7))
+* design specs for node presence control plane ([#236](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/236)) ([d6b6210](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/d6b6210c7cf7825794636f3392ec7fd4b4ecb607))
+* extract API reference from README into docs/api.md ([#237](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/237)) ([f55dd8d](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/f55dd8da683ad19d5844a359910bca648154e7ed))
+* refresh ROADMAP to reflect shipped and in-flight work ([#245](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/245)) ([43d2880](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/43d2880f165d11cdb3d0f504dee676b3acbc9542))
+
+
+### Code Refactoring
+
+* rename toolbox_id/server_name to name on the MCP toolbox types ([#255](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/255)) ([779ed95](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/779ed953faffed05df822961312f25f725f0da5d))
+
+## [0.10.0](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.9.1...v0.10.0) (2026-06-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* client send API — send/start/execute renames + reply_to return address ([#215](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/215))
+
+### Features
+
+* client send API — send/start/execute renames + reply_to return address ([#215](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/215)) ([e5bddac](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/e5bddacc54f7f51d3a657fdcba6cb9af3b250c8b))
+
+## [0.9.1](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.9.0...v0.9.1) (2026-06-10)
+
+
+### Features
+
+* public MCPToolboxRef — reference a toolbox by name; closes issue [#212](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/212) ([#213](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/213)) ([ddb2d14](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/ddb2d14d2d2820f06a9988b9baeac25b3d77ad99))
+
+## [0.9.0](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.8.0...v0.9.0) (2026-06-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* MCPToolbox — rename from MCPBridge + capability advertisement ([#210](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/210))
+* MCP bridge [WIP] + retire BaseToolNodeSchema for ToolBinding ([#207](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/207))
+
+### Features
+
+* agents discover MCP toolbox tools via the capability view ([#211](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/211)) ([88d0a96](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/88d0a963c5b14f228e9df053dddb42aff23adbf6))
+* ConsumerContext + NodeResult constructors + frameless base handler ([#203](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/203)) ([f2169b9](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/f2169b9081c3ae74c75b9f9b0f9885255db0849f))
+* MCP bridge [WIP] + retire BaseToolNodeSchema for ToolBinding ([#207](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/207)) ([d4342e4](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/d4342e46592a3048144a2e731d872f463bf60ea5))
+* MCP capability wire model, discovery config, and client URL retention ([#209](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/209)) ([20e4044](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/20e40445306180d16400dfa79c0a7803af89067d))
+* MCPToolbox — rename from MCPBridge + capability advertisement ([#210](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/210)) ([7cc065f](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/7cc065f226fdcb7840ef22d308a7d919cca70512))
+
+
+### Documentation
+
+* peer node pattern, explanation + Node/NodeRef reference ([#208](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/208)) ([8511ebd](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/8511ebde33d37e5b69e7ed7988473e1d12445c09))
+* refresh README and split deep-dive guides into how-to pages ([#205](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/205)) ([e3ac5e4](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/e3ac5e4dbda11a9aa8652d0862c72af95116abf2))
+
+## [0.8.0](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.7.0...v0.8.0) (2026-06-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* unify `run` into the `@handler` registry; remove input_args ([#200](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/200))
+
+### Features
+
+* unify `run` into the `[@handler](https://github.com/handler)` registry; remove input_args ([#200](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/200)) ([bb4b8c4](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/bb4b8c43d9157ea100f7b772a240f920d46214b6))
+
+## [0.7.0](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.6.1...v0.7.0) (2026-06-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* The MCP adaptor is removed (landed in #197). `from calfkit import mcp`, `Agent(tools=[McpServer(...)])`, `Worker(idempotency_cache=...)`, the `calfkit mcp` CLI subcommand, and the `mcp` dependency are gone. There is no replacement in this release; pin `calfkit <0.7` if you depend on the MCP adaptor.
+
+### Features
+
+* remove MCP adaptor ([#198](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/198)) ([d6d497f](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/d6d497f0cb7ffa93c049d9fd85e3cba7c770a4a7))
+
+## [0.6.1](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.6.0...v0.6.1) (2026-06-08)
+
+
+### Features
+
+* header-based route dispatch for nodes ([#195](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/195)) ([4a510e6](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/4a510e62371c05427d8e28e77ea22e98f1d67daf))
+
+
+### Documentation
+
+* make CLI command blocks read as terminal; shell-safe [cli] hint ([#190](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/190)) ([365f807](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/365f807a0347114f7dfe13294dce287c78b0d32a))
+
+## [0.6.0](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.5.4...v0.6.0) (2026-06-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* provision inbox topics at broker start; no hang on no-auto-create brokers ([#180](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/180)) (#188)
+
+### Bug Fixes
+
+* provision inbox topics at broker start; no hang on no-auto-create brokers ([#180](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/180)) ([#188](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/188)) ([39e1b07](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/39e1b07303c22ee21cf2d36a2ba2d8397dcf9f56))
+
+## [0.5.4](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.5.3...v0.5.4) (2026-06-06)
+
+
+### Features
+
+* agent-POV message-history projection for multi-agent channels ([#154](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/154)) ([#185](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/185)) ([86e69c5](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/86e69c5436369d088c8cf02122135adecda43759))
+
+## [0.5.3](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.5.2...v0.5.3) (2026-06-06)
+
+
+### Features
+
+* CLI add `calfkit run` to run nodes without Worker boilerplate ([#181](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/181)) ([6c1e38e](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/6c1e38e006f1481016dc132e502fa4eeb734d9ef))
+
+## [0.5.2](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.5.1...v0.5.2) (2026-06-06)
+
+
+### Features
+
+* node & worker lifecycle hooks ([#165](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/165)) ([#175](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/175)) ([c9cbb3e](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/c9cbb3eb45ea0a7332d93705e91b1e65e7604a52))
+
+## [0.5.1](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.5.0...v0.5.1) (2026-06-05)
+
+
+### Features
+
+* opt-in Kafka topic provisioning (experimental) ([#174](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/174)) ([#177](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/177)) ([12fd012](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/12fd01280ac87f4116bd6dad4b6a6620383cb878))
+
+## [0.5.0](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.4.1...v0.5.0) (2026-06-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* true one-way Client.emit_to_node fire-and-forget ([#132](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/132)) (#176)
+
+### Features
+
+* true one-way Client.emit_to_node fire-and-forget ([#132](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/132)) ([#176](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/176)) ([c0d120c](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/c0d120c93b57e31b1f7c0eb90d3a75910400318c))
+
+## [0.4.1](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.4.0...v0.4.1) (2026-06-04)
+
+
+### Features
+
+* reference JSON Schema for mcp.json ([#172](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/172)) ([1262f51](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/1262f51a5d1923598ace30e882bd67c9b2586599))
+
+## [0.4.0](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.3.6...v0.4.0) (2026-06-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* deps as dict, lift correlation_id to context ([#144](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/144)) (#170)
+
+### Features
+
+* deps as dict, lift correlation_id to context ([#144](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/144)) ([#170](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/170)) ([89f678e](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/89f678ee52e8099c5e331dc26d03fe558ac09c8d))
+
+## [0.3.6](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.3.5...v0.3.6) (2026-05-31)
+
+
+### Features
+
+* MCP adaptor v1, expose any MCP server as calfkit tools ([#162](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/162)) ([dde6c32](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/dde6c3286763ea6904a9ca64564e0ac65b09fcb4))
+
+## [0.3.5](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.3.4...v0.3.5) (2026-05-23)
+
+
+### Bug Fixes
+
+* key _pending_batches by frame_id to fix parallel tool calling collisions ([#155](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/155)) ([12ad569](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/12ad569d4c58ff7f66d26018c7b46533ae8702dc))
+
+## [0.3.4](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.3.3...v0.3.4) (2026-05-23)
+
+
+### Documentation
+
+* add Ask DeepWiki badge to README ([#152](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/152)) ([2fb90f7](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/2fb90f70ddf9e5363759936c385af04c58651e33))
+
+## [0.3.3](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.3.2...v0.3.3) (2026-05-22)
+
+
+### Bug Fixes
+
+* (agent,tool) surface tool exceptions to the agent instead of hanging ([#146](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/146)) ([05162cc](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/05162cc2512285e7dfcb64a30c7c8bca2f9fe50d))
+
+## [0.3.2](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.3.1...v0.3.2) (2026-05-21)
+
+
+### Bug Fixes
+
+* route tool returns to private inbox to prevent co-tenant leak ([#142](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/142)) ([197463f](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/197463f2f7f338bae53bf144e3a86cf27373e350))
+
+
+### Documentation
+
+* integrate DX review into v1 design and add reviewer artifact ([#138](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/138)) ([29a7961](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/29a7961d5c2d4e46fcb7e2e4a81f43116c34feb3))
+
+## [0.3.1](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.3.0...v0.3.1) (2026-05-19)
+
+
+### Features
+
+* add ConsumerNodeDef and expose State on NodeResult ([#137](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/137)) ([aa139c7](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/aa139c74fe7e0d1baa0a016b5db423ebdc6e65ad))
+* add runtime model_settings to Agent and Client ([#134](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/134)) ([47d64b2](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/47d64b286b3ca151cc40022dfab22b4862d06b04))
+
+
+### Documentation
+
+* add ROADMAP.md index pointing to design docs ([#135](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/135)) ([5fa2a1a](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/5fa2a1af731341e3d9bef71be42e30841451058a))
+
+## [0.3.0](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.2.6...v0.3.0) (2026-05-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* track per-hop event emitter via Kafka headers ([#133](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/133))
+
+### Features
+
+* track per-hop event emitter via Kafka headers ([#133](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/133)) ([fad6acb](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/fad6acb2d581261b9407d278a6ae66448ddc456d))
+
+
+### Documentation
+
+* Update README.md ([#130](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/130)) ([1a9b8b2](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/1a9b8b280a9a74b2160904647138941ea11f7e7b))
+
+## [0.2.6](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.2.5...v0.2.6) (2026-05-17)
+
+
+### Features
+
+* add gates to BaseNodeDef for pre-run event filtering ([#127](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/127)) ([9fbdbd0](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/9fbdbd072a4de4335c3774efa8775c0e8b43b2bd))
+
+## [0.2.5](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.2.4...v0.2.5) (2026-04-11)
+
+
+### Features
+
+* add serializable node schemas and runtime tool overrides ([#121](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/121)) ([e464c08](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/e464c08e4f179e0cd622789a067718fdbd043c1f))
+
+## [0.2.4](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.2.3...v0.2.4) (2026-04-08)
+
+
+### Features
+
+* add OpenAI Responses API support  ([#119](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/119)) ([fa1c1a7](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/fa1c1a7336014a1da3a40de0a1651fdeee722fe4))
+
+## [0.2.3](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.2.2...v0.2.3) (2026-04-02)
+
+
+### Bug Fixes
+
+* update vendored anthropic imports and add AnthropicModelClient ([#116](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/116)) ([06c3cc3](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/06c3cc3749ee9c620ddb91a4bc3dc7d7564842fb))
+
+## [0.2.2](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.2.1...v0.2.2) (2026-04-01)
+
+
+### Bug Fixes
+
+* route temp_instructions to the model and expose [@agent](https://github.com/agent).instructions decorator ([#113](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/113)) ([cd3a4c4](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/cd3a4c41983dcaf2f957db5b49454f4a334a4a68))
+
+## [0.2.1](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.2.0...v0.2.1) (2026-04-01)
+
+
+### Features
+
+* add parallel tool call support for agents ([#112](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/112)) ([c93dfd9](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/c93dfd920ec0ef8d1a826164db25a54b35556b67))
+
+
+### Documentation
+
+* close python code block in readme ([#109](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/109)) ([34cb53a](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/34cb53a70cc503b4b001c2cda2f1901ad2533dc1))
+* update quickstart example ([#111](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/111)) ([bfec93c](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/bfec93c48168a96718384b463560e54cf1ac163f))
+
+## [0.2.0](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.17...v0.2.0) (2026-03-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove legacy SDK and promote experimental modules to stable top-level API ([#108](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/108))
+
+### Features
+
+* add shared reply dispatcher with correlation-based dispatch to experimental client ([#104](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/104)) ([ecd9e0e](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/ecd9e0e53000edb83e953109f8cf9ed2c973d642))
+* client side output type deserialization ([#106](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/106)) ([356b882](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/356b882fe08e4608201a5d904e54ac30286994ee))
+* remove legacy SDK and promote experimental modules to stable top-level API ([#108](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/108)) ([8d85661](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/8d85661009fbce548686122ee8fa4999ab71e5ee))
+
+## [0.1.17](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.16...v0.1.17) (2026-03-27)
+
+
+### Features
+
+* (choreographed durable agents) replace reply-stack with call-stack workflow model and flatten State ([#101](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/101)) ([52f8989](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/52f898937ee4c4b801b246f79175914281890b86))
+* implement experimental choreography-based node definitions for durable agent and multi-agent workflows ([#96](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/96)) ([ec5c1ae](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/ec5c1ae3d4d67574185b3f640a1490f0faedcf13))
+* more features for experimental nodes, add client/worker, and structured logging ([#102](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/102)) ([738c7a4](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/738c7a48f5942f62e01bca10bd208965bee21398))
+* restructure state models, add per-invocation input injection, and TDD test coverage for experimental nodes  ([#98](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/98)) ([2ce6ea3](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/2ce6ea324b653379f0f38d858013d5ecd47902e8))
+* Simplify deps typing, add structured output support, and overhaul integration tests ([#103](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/103)) ([5067482](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/50674825e3cf8494dcf6558246a427fdebee8f9f))
+
+## [0.1.16](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.15...v0.1.16) (2026-03-06)
+
+
+### Features
+
+* split EventEnvelope into routing, state, and typed payload layers ([#93](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/93)) ([2fb313c](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/2fb313c5764f9fd48ca1e1717f5ca4de9bab4b81))
+* structured input/output support and request/return handler split ([#90](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/90)) ([41fc8d6](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/41fc8d6d74f33a75e9a2e94b50ea395831f4e8b6))
+
+## [0.1.15](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.14...v0.1.15) (2026-03-04)
+
+
+### Features
+
+* replace thin model_request() wrapper with more feature heavy agent in chat node ([#88](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/88)) ([916102a](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/916102ae8841bb3c454e091d8bd876429b56e31d))
+
+## [0.1.14](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.13...v0.1.14) (2026-03-01)
+
+
+### Features
+
+* foundational refactors for composable multi-agent orchestration feature ([#85](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/85)) ([e506af9](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/e506af9214fb1f36b0dfb29418d3308a683f8175))
+
+## [0.1.13](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.12...v0.1.13) (2026-02-27)
+
+
+### Documentation
+
+* update readme ([#83](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/83)) ([23f388d](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/23f388d4c39f952c5ab5234e1506fab40d8d7338))
+
+## [0.1.12](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.11...v0.1.12) (2026-02-26)
+
+
+### Features
+
+* add top-level re-exports to calfkit package ([#81](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/81)) ([50bf628](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/50bf628d1fb3466a486b6172d816f588a5fcf4ff))
+
+## [0.1.11](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.10...v0.1.11) (2026-02-25)
+
+
+### Documentation
+
+* update readme for readability ([#79](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/79)) ([f216981](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/f216981bc979ea160b7d52b6b28c075e39b29405))
+
+## [0.1.10](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.9...v0.1.10) (2026-02-24)
+
+
+### Features
+
+* revamp auto trading example into daytrading agents arena with per-agent model selection ([#73](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/73)) ([0710671](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/071067199aa9e8ebaa6d19153198eb0f7cc41534))
+
+## [0.1.9](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.8...v0.1.9) (2026-02-23)
+
+
+### Documentation
+
+* update readme ([#71](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/71)) ([5b5afba](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/5b5afbaad8dfeebdd052d1697fac2ab216ed1256))
+
+## [0.1.8](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.7...v0.1.8) (2026-02-22)
+
+
+### Features
+
+* ToolContext injection for [@agent](https://github.com/agent)_tool via RunContext subclass ([#65](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/65)) ([c51c7f2](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/c51c7f231d51dc3a55687d8a3965ac14487b6495))
+
+## [0.1.7](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.6...v0.1.7) (2026-02-20)
+
+
+### Features
+
+* agent-to-agent communication and groupchat support  ([#56](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/56)) ([8d7fd4d](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/8d7fd4d17e91d1f31a8ac70355bbbaab452f5ed6))
+* declarative private topic subscriptions and caller pattern updates ([#61](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/61)) ([b37c423](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/b37c4238fc4db7d2ef993efe6945ed45e68f5668))
+* private reply-topic routing for multi-agent deployments and trading bots example  ([#58](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/58)) ([3f13c80](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/3f13c807fe746a511d5f2295de5c8a067a407b92))
+* stack-based agent handoff with @entrypoint/[@returnpoint](https://github.com/returnpoint) decorators ([#63](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/63)) ([2418fd6](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/2418fd6bf173f2b979c4a48654c86a0058866c6e))
+
+
+### Documentation
+
+* add support to documentation and improve readability ([#50](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/50)) ([e333239](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/e333239f28e85a6db3181c37cfbec1997b67fb18))
+* calfkit cloud interest form ([#53](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/53)) ([5206020](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/5206020c44a5951fcee99770968aa60dc3a15943))
+* update calfkit cloud docs and add linkedin contact ([#55](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/55)) ([bcf9fb5](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/bcf9fb5f2b6d44c7911be7139715c351f88e00d8))
+* update readme ([#57](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/57)) ([bd22061](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/bd2206197113db7f5753b36b6f49614df72e3276))
+* use TIP syntax for Calfkit Cloud callout ([#54](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/54)) ([5c6fa4e](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/5c6fa4e6b3a0e6cc6bbf05df74ef3d03cfadc27f))
+
+## [0.1.6](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.5...v0.1.6) (2026-02-06)
+
+### Refactor
+* vendor pydantic-ai-slim to reduce package install footprint by 81% ([#48](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/48)) ([a31ca78](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/a31ca78))
+
+### Documentation
+
+* add python ver. compatibility and add shareable tool explanation ([#46](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/46)) ([a22e23b](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/a22e23b22024ba34b8ff72d286d91ef516a9a9e5))
+* update README.md for readability ([#49](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/49)) ([b4c4f78](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/b4c4f78e7e979bed2145ff1c0522986fa7d4bd85))
+
+## [0.1.5](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.4...v0.1.5) (2026-02-06)
+
+
+### Bug Fixes
+
+* distinguish between unset and empty `tool_nodes` in runtime patching + docs: dynamic runtime tools and system prompt patching ([#44](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/44)) ([7805e1a](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/7805e1ab522fec2e061138701f2a85ebd7e73689))
+
+
+### Documentation
+
+* add contact section ([#43](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/43)) ([a9ec018](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/a9ec018b12bc155e374e466215cf1b1c3867bdba))
+* fix quickstart documentation for tool patching to be more clear ([#45](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/45)) ([dbad7af](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/dbad7affcda7c8477d61971345a67b166f491833))
+* update README.md wording ([#39](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/39)) ([c8fe616](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/c8fe6168d5f6abe4745daafe3b52a877dd12bdc8))
+* update README.md wording ([#41](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/41)) ([191836c](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/191836c38251fecbd3f87a388bd84821cedf6166))
+* update README.md wording ([#42](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/42)) ([bd43c32](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/bd43c3233feb0838a1133c1f7dbd9524cb19f4b1))
+
+## [0.1.4](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.3...v0.1.4) (2026-02-05)
+
+
+### Documentation
+
+* improve README with quickstart refinements and badges ([#37](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/37)) ([19e089e](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/19e089e54f841980c4ccdcff65e9e74579d8db74))
+
+## [0.1.3](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.2...v0.1.3) (2026-02-05)
+
+
+### Features
+
+* add RouterServiceClient for invoking agents services ([#36](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/36)) ([8cd6eca](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/8cd6ecaec18c4a34e255a2592b097ec69cb53318))
+* new `Service` class to deploy and run nodes as a service ([#33](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/33)) ([7066bf3](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/7066bf3329a9dd91a3e4abb8ee1d91a2001f1d53))
+
+## [0.1.2](https://github.com/The-Syntax-Slayer/calfkit-sdk/compare/v0.1.1...v0.1.2) (2026-02-04)
+
+
+### Bug Fixes
+
+* invoke function on unstarted broker + doc: readme quickstart examples ([#30](https://github.com/The-Syntax-Slayer/calfkit-sdk/issues/30)) ([bad4216](https://github.com/The-Syntax-Slayer/calfkit-sdk/commit/bad4216a779fe785f76bc627d4c61a98df800922))
+
+## [0.1.1](https://github.com/The-Syntax-Slayer/calf-sdk/compare/v0.1.0...v0.1.1) (2026-02-03)
+
+
+### Features
+
+* add build commands and CI workflows ([#3](https://github.com/The-Syntax-Slayer/calf-sdk/issues/3)) ([fa66282](https://github.com/The-Syntax-Slayer/calf-sdk/commit/fa66282d31c139d6b6579e6e13c54ecf02ab759d))
+* event-driven tool calling + agent routing node + function tool decorator ([#16](https://github.com/The-Syntax-Slayer/calf-sdk/issues/16)) ([5af52bd](https://github.com/The-Syntax-Slayer/calf-sdk/commit/5af52bd779c0b567cf80395063b622ef9d9cc388))
+* high level api structure skeleton ([#8](https://github.com/The-Syntax-Slayer/calf-sdk/issues/8)) ([960b622](https://github.com/The-Syntax-Slayer/calf-sdk/commit/960b622a4966d60f018b73a4e140015c24a2f1bd))
+* implement chat agent node + refactor provider layer ([#12](https://github.com/The-Syntax-Slayer/calf-sdk/issues/12)) ([c2e40c0](https://github.com/The-Syntax-Slayer/calf-sdk/commit/c2e40c0a8e0417f8d3097a786c09ed45144bc0f9))
+* implement event-driven base node pieces and refactor model clients ([#10](https://github.com/The-Syntax-Slayer/calf-sdk/issues/10)) ([bb66af0](https://github.com/The-Syntax-Slayer/calf-sdk/commit/bb66af0a17380e4e892e31442ff68d3e50e4fd8f))
+* implement node-based agent architecture with event-driven messaging ([#15](https://github.com/The-Syntax-Slayer/calf-sdk/issues/15)) ([0bfd190](https://github.com/The-Syntax-Slayer/calf-sdk/commit/0bfd190a60f1c5b9dbf9815c100014078106b27b))
+* message history persistence ([#18](https://github.com/The-Syntax-Slayer/calf-sdk/issues/18)) ([ef6dfae](https://github.com/The-Syntax-Slayer/calf-sdk/commit/ef6dfaee10eff29e71af64bf263dd275f488a78b))
+* MVP agents ([#17](https://github.com/The-Syntax-Slayer/calf-sdk/issues/17)) ([f6141d4](https://github.com/The-Syntax-Slayer/calf-sdk/commit/f6141d46d0f93ff13173cc2249bedd3fd735ecab))
+* openai chat completions client and base client class implementation ([#9](https://github.com/The-Syntax-Slayer/calf-sdk/issues/9)) ([28f6d62](https://github.com/The-Syntax-Slayer/calf-sdk/commit/28f6d62e72ff287b4ee7095992c0da2c07ff5d7c))
+* rename sdk to calfkit ([#26](https://github.com/The-Syntax-Slayer/calf-sdk/issues/26)) ([32d114f](https://github.com/The-Syntax-Slayer/calf-sdk/commit/32d114f14d537da279ebd3975d7df0511648ccfa))
+
+
+### Bug Fixes
+
+* mypy ci issues ([#23](https://github.com/The-Syntax-Slayer/calf-sdk/issues/23)) ([4429541](https://github.com/The-Syntax-Slayer/calf-sdk/commit/442954193fd6a64517f5cecef005018efec13622))
+* refine sdk and bug fixes ([#24](https://github.com/The-Syntax-Slayer/calf-sdk/issues/24)) ([89a586b](https://github.com/The-Syntax-Slayer/calf-sdk/commit/89a586bd40bfa5d32659a5e97c9f70fd3df38062))
+
+
+### Dependencies
+
+* update aiokafka requirement from &lt;0.13.0,&gt;=0.10.0 to &gt;=0.10.0,&lt;0.14.0 ([#13](https://github.com/The-Syntax-Slayer/calf-sdk/issues/13)) ([13b5014](https://github.com/The-Syntax-Slayer/calf-sdk/commit/13b501411a569a44a9baadccad821174c91deac7))
+* update typer requirement from &lt;0.20 to &lt;0.22 ([#14](https://github.com/The-Syntax-Slayer/calf-sdk/issues/14)) ([c7ef948](https://github.com/The-Syntax-Slayer/calf-sdk/commit/c7ef9483d75b5cc2cbcfb57dc32e0a01b15b82ab))
+
+
+### Documentation
+
+* high-level agents, teams, tools API documentation and example code usage snippets ([#6](https://github.com/The-Syntax-Slayer/calf-sdk/issues/6)) ([de81b63](https://github.com/The-Syntax-Slayer/calf-sdk/commit/de81b6353c4659f47302f8f37c78607ce6154f44))
+* update readme consistency ([#7](https://github.com/The-Syntax-Slayer/calf-sdk/issues/7)) ([279ccd1](https://github.com/The-Syntax-Slayer/calf-sdk/commit/279ccd1f5f2b6632ca27fb527e781a588205a419))

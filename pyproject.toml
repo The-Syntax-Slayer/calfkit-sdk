@@ -1,0 +1,130 @@
+[project]
+name = "calfkit"
+version = "0.12.0"
+description = "A framework to build powerful AI agent teams."
+readme = "README.md"
+license = "Apache-2.0"
+authors = [{ name = "Calf AI" }]
+keywords = ["ai", "agents", "kafka", "event-driven", "workflows", "llm", "distributed", "decoupled"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.10"
+
+dependencies = [
+    "faststream[kafka]>0.7",
+    "pydantic>=2.12.5",
+    "python-dotenv>=1.2.1",
+    "uuid-utils>=0.14.0",
+    # Vendored pydantic-ai dependencies (from pydantic-ai-slim v1.47.0)
+    "httpx>=0.27",
+    # griffe pinned to >=2.0: griffe 1.15.0 ships a broken wheel with no
+    # top-level __init__.py, causing `from griffe import Docstring` in
+    # calfkit/_vendor/pydantic_ai/_griffe.py to fail. griffe 2.x restores the
+    # symbol and is API-compatible with the vendored code.
+    "griffe>=2.0,<3",
+    "typing-inspection>=0.4.0",
+    "opentelemetry-api>=1.28.0",
+    "genai-prices>=0.0.48",
+    # Capped to <2: the vendored pydantic-ai imports `pydantic_graph.beta`,
+    # which 2.0.0 removed (makes calfkit unimportable).
+    "pydantic-graph>=1.47.0,<2",
+    "exceptiongroup>=1.2.2; python_version < '3.11'",
+    # Provider SDKs
+    "openai>=1.0.0",
+    "anthropic>=0.80.0",
+    "typing-extensions>=4.15.0",
+    "dishka>=1.9.1",
+    "mcp>=1.27.2",
+    "ktables>=0.4.0",
+    # CLI (`ck`): typer powers the console script, watchfiles powers `ck run --reload`.
+    "typer>=0.12",
+    "watchfiles>=0.21",
+]
+
+[project.urls]
+Homepage = "https://github.com/The-Syntax-Slayer/calfkit-sdk"
+Repository = "https://github.com/The-Syntax-Slayer/calfkit-sdk"
+Issues = "https://github.com/The-Syntax-Slayer/calfkit-sdk/issues"
+
+[project.scripts]
+# Top-level `ck` CLI (the calfkit SDK's command-line tool). Mounts the `topics`
+# (provision) subcommand and the `run` command. Its deps (typer, watchfiles)
+# ship in the core install, so `ck` is available right after `pip install calfkit`.
+ck = "calfkit.cli:main"
+
+[project.optional-dependencies]
+dev = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["calfkit"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 150
+exclude = ["calfkit/_vendor"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = true
+warn_unused_ignores = true
+exclude = ["calfkit/_vendor"]
+
+[tool.coverage.run]
+omit = ["calfkit/_vendor/*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+# --strict-markers: an unregistered marker is an error, not a silent no-op.
+# -m "not kafka and not live": external-dependency tests are OPT-IN, one
+# orthogonal marker per dependency (ADR 0007). They are deselected by default so
+# a bare `pytest` / `make test` never needs Docker, a network, or credentials.
+# Run a lane with `-m kafka` (`make test-kafka`) or `-m live` (`make test-live`),
+# whose CLI -m overrides this default selection. A test needing both carries both
+# markers (and is then selected by either lane).
+addopts = ["--strict-markers", "-m", "not kafka and not live"]
+markers = [
+    "kafka: requires a real Kafka/Redpanda broker (testcontainers-managed unless CALF_TEST_KAFKA_BOOTSTRAP names an external broker)",
+    "live: requires a real model API (set OPENAI_API_KEY and TEST_LLM_MODEL_NAME); main-only CI lane, never on PRs",
+]
+
+[dependency-groups]
+dev = [
+    "faker>=40.12.0",
+    "fastapi>=0.129.0",
+    "mypy>=1.19.1",
+    "pytest>=9.0.2",
+    "pytest-asyncio>=1.3.0",
+    "pytest-cov>=7.1.0",
+    "pytest-timeout>=2.4.0",
+    "rich>=14.3.2",
+    "ruff>=0.14.11",
+    "temporalio>=1.23.0",
+]
+examples = [
+    "plotext>=5.3.2",
+    "sympy>=1.13",
+    "websockets>=16.0",
+]
+integration = [
+    "pytest-xdist>=3.6",
+    "testcontainers[kafka]>=4.14.2",
+]
